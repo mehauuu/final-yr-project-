@@ -1,0 +1,24 @@
+# Ignore node_modules and log files
+node_modules/
+logs/
+*.log
+
+# Ignore Docker and Hyperledger generated files
+docker-compose.yaml.bak
+crypto-config/
+config/*.block
+config/*.tx
+config/crypto-config.yaml
+
+# Ignore local environment files and temporary files
+.env
+*.tmp
+
+# Ignore MacOS system files
+.DS_Store
+
+# Ignore editor config files (optional)
+.vscode/
+
+# Ignore compiled binaries (optional, if you have binary files)
+*.bin
