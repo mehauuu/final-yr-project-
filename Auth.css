@@ -1,0 +1,45 @@
+.auth-page {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(45deg, #4a90e2, #2176d1);
+}
+
+.auth-form {
+  background: rgba(255, 255, 255, 0.95);
+  padding: 30px;
+  border-radius: 20px;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+}
+
+.auth-input {
+  width: 100%;
+  padding: 15px;
+  margin: 10px 0;
+  border: 2px solid transparent;
+  border-radius: 30px;
+  transition: border-color 0.3s;
+}
+
+.auth-input:focus {
+  border-color: #4a90e2;
+}
+
+.password-peek {
+  position: absolute;
+  right: 15px;
+  top: 50%;
+  transform: translateY(-50%);
+  cursor: pointer;
+}
+
+.password-peek svg {
+  width: 24px;
+  height: 24px;
+  transition: all 0.3s;
+}
+
+.password-peek:hover svg {
+  fill: #4a90e2;
+}

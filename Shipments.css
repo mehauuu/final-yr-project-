@@ -1,0 +1,378 @@
+.shipments-page {
+  padding: 20px;
+  background: #f0f8ff;
+  min-height: 100vh;
+  font-family: 'Roboto', sans-serif;
+}
+
+.shipment-search h3,
+.shipment-list h3,
+.shipment-actions h3 {
+  color: #333;
+  font-size: 1.5em;
+  margin-bottom: 10px;
+}
+
+.shipment-search .shipments-controls,
+.shipment-actions div {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.search-bar {
+  padding: 10px;
+  border: none;
+  border-radius: 20px 0 0 20px;
+  width: 200px;
+  box-shadow: inset 0 0 5px rgba(0,0,0,0.1);
+}
+
+.filter-select {
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 20px;
+  background: white;
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+}
+
+.filter-select::-ms-expand {
+  display: none;
+}
+
+.add-shipment-btn {
+  background: #4a90e2;
+  color: white;
+  padding: 10px 20px;
+  border-radius: 20px;
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  transition: background 0.3s;
+}
+
+.add-shipment-btn:hover {
+  background: #2176d1;
+}
+
+.shipment-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  gap: 20px;
+  padding: 20px;
+}
+
+.shipment-item {
+  background: white;
+  border: 1px solid #e0e0e0;
+  border-radius: 8px;
+  padding: 15px;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+  transition: transform 0.3s, box-shadow 0.3s, background 0.3s;
+}
+
+.shipment-item:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+  background: #f9f9f9;
+}
+
+.shipment-info {
+  margin-bottom: 10px;
+}
+
+.shipment-info h4 {
+  margin-bottom: 5px;
+  color: #333;
+  transition: color 0.3s;
+}
+
+.shipment-info p {
+  margin: 2px 0;
+  color: #666;
+  transition: color 0.3s;
+}
+
+.shipment-item:hover .shipment-info h4 {
+  color: #4a90e2;
+}
+
+.shipment-item:hover .shipment-info p {
+  color: #333;
+}
+
+.status-select {
+  margin-left: 5px;
+  padding: 2px 5px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  background: #fff;
+  cursor: pointer;
+}
+
+.shipment-actions {
+  display: flex;
+  justify-content: flex-end;
+  opacity: 0;
+  transition: opacity 0.3s;
+}
+
+.shipment-item:hover .shipment-actions {
+  opacity: 1;
+}
+
+.shipment-action {
+  background: #4a90e2;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  padding: 5px 10px;
+  cursor: pointer;
+  font-size: 0.9em;
+  transition: background 0.3s, transform 0.3s;
+}
+
+.shipment-action:hover {
+  background: #2176d1;
+  transform: scale(1.05);
+}
+
+.delete-btn {
+  background: #e74c3c;
+}
+
+.delete-btn:hover {
+  background: #c0392b;
+}
+
+.shipment-timeline {
+  position: relative;
+  padding: 30px 0;
+}
+
+.shipment-timeline::before {
+  content: '';
+  position: absolute;
+  width: 6px;
+  background: #4a90e2;
+  top: 0;
+  bottom: 0;
+  left: 50px;
+  z-index: -1;
+}
+
+.shipment-timeline-item {
+  position: relative;
+  margin-bottom: 30px;
+}
+
+.shipment-timeline-item::after {
+  content: '';
+  position: absolute;
+  width: 15px;
+  height: 15px;
+  background: #4a90e2;
+  border: 2px solid white;
+  border-radius: 50%;
+  left: 47px;
+  top: 5px;
+  z-index: 1;
+}
+
+.shipment-timeline-content {
+  margin-left: 70px;
+}
+
+.shipment-timeline-item h4 {
+  margin-bottom: 5px;
+}
+
+.shipment-timeline-item p {
+  margin: 0;
+  font-size: 0.9em;
+  color: #666;
+}
+
+.shipment-status-chip {
+  background: #e0e0e0;
+  border-radius: 50px;
+  padding: 5px 15px;
+  cursor: pointer;
+  margin: 5px;
+  transition: all 0.3s;
+  display: inline-block;
+}
+
+.shipment-status-chip:hover {
+  background: #b3b3b3;
+  transform: scale(1.05);
+}
+
+.shipment-status-chip.active {
+  background: #4a90e2;
+  color: white;
+}
+
+.shipment-map {
+  width: 100%;
+  height: 400px;
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0,0,0,0.1);
+}
+
+.shipment-map-marker {
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  background: #4a90e2;
+  border: 2px solid white;
+  box-shadow: 0 0 0 3px #4a90e2;
+  position: absolute;
+}
+
+.shipment-map-marker::after {
+  content: '';
+  position: absolute;
+  bottom: 35px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: #4a90e2;
+  color: white;
+  padding: 5px;
+  border-radius: 4px;
+  white-space: nowrap;
+  display: none;
+}
+
+.shipment-map-marker:hover::after {
+  display: block;
+}
+
+.shipment-health-radar {
+  width: 250px;
+  height: 250px;
+  background: #f0f0f0;
+  border-radius: 50%;
+  position: relative;
+  margin: 20px auto;
+}
+
+.shipment-health-radar div {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  clip-path: polygon(50% 0%, 100% 38.2%, 61.8% 100%, 0% 100%, 38.2% 61.8%);
+  transition: transform 0.3s;
+}
+
+.shipment-health-radar div:nth-child(1) {
+  background: #4a90e2;
+  transform: rotate(0deg);
+}
+
+.shipment-health-radar div:nth-child(2) {
+  background: #2176d1;
+  transform: rotate(72deg);
+}
+
+.shipment-health-radar-label {
+  position: absolute;
+  text-align: center;
+  width: 100%;
+  transform: rotate(-90deg);
+  font-size: 0.8em;
+  color: #333;
+}
+
+.shipment-health-radar-label:nth-child(3) {
+  top: 125px;
+  left: -25px;
+}
+
+.shipment-health-radar-label:nth-child(4) {
+  top: 125px;
+  right: -25px;
+}
+
+.export-btn, .report-btn {
+  background: #4a90e2;
+  color: white;
+  border: none;
+  border-radius: 20px;
+  padding: 10px 20px;
+  margin: 5px;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+.export-btn:hover, .report-btn:hover {
+  background: #2176d1;
+}
+
+/* Media Query for Responsiveness */
+@media (max-width: 600px) {
+  .shipment-search .shipments-controls,
+  .shipment-actions div {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .search-bar {
+    width: 100%;
+    margin-bottom: 10px;
+  }
+
+  .filter-select {
+    width: 100%;
+    margin-bottom: 10px;
+  }
+
+  .add-shipment-btn {
+    width: 100%;
+    justify-content: center;
+  }
+
+  .shipment-list {
+    grid-template-columns: 1fr;
+  }
+
+  .shipment-timeline-content {
+    margin-left: 0;
+  }
+
+  .shipment-timeline::before {
+    left: 10px;
+  }
+
+  .shipment-timeline-item::after {
+    left: 7px;
+  }
+
+  .shipment-map {
+    height: 300px;
+  }
+
+  .shipment-health-radar {
+    width: 200px;
+    height: 200px;
+  }
+
+  .shipment-health-radar-label {
+    font-size: 0.7em;
+  }
+
+  .shipment-health-radar-label:nth-child(3) {
+    top: 100px;
+    left: -20px;
+  }
+
+  .shipment-health-radar-label:nth-child(4) {
+    top: 100px;
+    right: -20px;
+  }
+}
